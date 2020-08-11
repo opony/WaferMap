@@ -1,0 +1,32 @@
+<htML>
+    <head>
+        <script src="ColorBinMap.js"></script>
+    </head>
+    <body>
+        <script>
+            $(function(){
+                
+
+                let colorMap = new ColorBinMap("map");
+                colorMap.height = 100;
+                colorMap.width = 100;
+                colorMap.NotchNum = 180;
+
+                colorMap.enableDrawLine = true;
+                colorMap.addBin(0,0,"a","a","black");
+                colorMap.addBin(0,1,"a","a","red");
+                colorMap.addBin(1,0,"a","a","blue");
+                colorMap.addBin(1,1,"a","a","yellow");
+                colorMap.onDieInfoEnvet = onDieInfo;
+
+                colorMap.draw();
+            });
+
+            function onDieInfo(x,y, binCode, dut, color){
+                console.log("Die X: " + x + ", Y: " + y + ", BinCode: " + binCode);
+            }
+        </script>
+        
+        <div id="map"></div>
+    </body>
+</htML>
